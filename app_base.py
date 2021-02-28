@@ -4,11 +4,11 @@ from dash.dependencies import Input, Output, State
 import datetime as date
 import yfinance as yf
 
-# user defined modules
+# defined modules
 import dash_layout as dashf
 import help_time_series_analysis as htsa
 
-# Parameters
+# Input Parameters
 file_name = 'symbols'
 folder = 'data'
 path_file = folder + '/' + file_name + '.csv'
@@ -21,7 +21,7 @@ end_date = date.date.today()
 n: int = 100
 
 # Load stock symbols
-df_syms = pd.read_csv('data/symbols.csv', index_col=0)
+df_syms = pd.read_csv(path_file, index_col=0)
 
 # Clean Data: Keep only main columns
 df_syms = df_syms[['name', 'symbol', 'country', 'industries']]

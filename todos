@@ -23,7 +23,6 @@ per creare il dataframe dei fcst in modo reattivo, ho dovuto creare un finto div
 i dati jsonati devono essere letti dall'altro callback UPDATE_FORECAST
 Perchè farlo? altrimenti non riesci a creare dataframe reattivi, devi per forza lavorare su un file statico
 si puo fare per pochi stocks, altrimenti non ha senso.
-    \
 
 ####### in futuro:
 ####### sincronizza con git (should be easy)
