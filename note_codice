@@ -1,0 +1,14 @@
+# note sul codice
+1) passare i dati tra diversi callbacks
+per creare il dataframe dei forecast in modo reattivo, ho dovuto creare un finto div che salva i dati in JSON: CALLBACK CREATE_FORECAST
+Perchè farlo? altrimenti non riesci a creare dataframe reattivi, devi per forza lavorare su un file statico
+
+## in futuro:
+# lavora sui forecast!
+manca divisione  trian test, criterio selezione tra piu modelli, verifica di stazionarietà dei dati,
+trasformazione di dati (log ad esempio)
+
+# selezione manuale del modello da utente
+# provare a usare altri modelli di forecast tipo ets o tslm
+# piccola simulazione di un giochino di algo trading
+# creare una classe per gestire i callbacks!

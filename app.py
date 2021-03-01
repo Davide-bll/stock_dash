@@ -61,6 +61,7 @@ dashf.app_layout(app, stock_options, initial_value)
 @app.callback(Output('timeseries', 'figure'),
               [Input('stockselector', 'value')])
 def update_graph(selected_dropdown_value):
+    """update stock price figure """
     trace1 = []
 
     df_sub = df
@@ -81,6 +82,7 @@ def update_graph(selected_dropdown_value):
 @app.callback(Output('intermediate-value_dec', 'children'),
               Input('stockselector_fcst', 'value'))
 def create_decomposed(input_value):
+    """ update decomposed series dataframe """
     # decompose series using additive model
     df_dec = htsa.deco_series(df[input_value])
 
@@ -90,6 +92,7 @@ def create_decomposed(input_value):
 @app.callback(Output('tsa_season', 'figure'),
               Input('intermediate-value_dec', 'children'))
 def update_seasonal(json_data):
+    """ update seasonal component figure"""
     df_season = pd.read_json(json_data, orient='split')
 
     trace1 = []
@@ -107,6 +110,7 @@ def update_seasonal(json_data):
 @app.callback(Output('tsa_trend', 'figure'),
               Input('intermediate-value_dec', 'children'))
 def update_trend(json_data):
+    """ update trned component figure"""
     df_season = pd.read_json(json_data, orient='split')
 
     trace1 = []
@@ -123,6 +127,7 @@ def update_trend(json_data):
 @app.callback(Output('tsa_resid', 'figure'),
               Input('intermediate-value_dec', 'children'))
 def update_residual(json_data):
+    """ update residual figure"""
     df_season = pd.read_json(json_data, orient='split')
 
     trace1 = []
@@ -141,6 +146,7 @@ def update_residual(json_data):
 @app.callback(Output('intermediate-value', 'children'),
               Input('stockselector_fcst', 'value'))
 def create_forecast(input_value):
+    """ update forecast dataframe"""
     list_df = []
 
     # create 100 step ahed forecast
@@ -153,6 +159,7 @@ def create_forecast(input_value):
 @app.callback(Output('forecast', 'figure'),
               [Input('intermediate-value', 'children')])
 def update_forecast(json_data):
+    """ update forecast figure"""
     df_fcst = pd.read_json(json_data, orient='split')
     trace_f = []
     selected_stocks = df_fcst.columns.tolist()
