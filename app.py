@@ -12,6 +12,7 @@ import help_time_series_analysis as htsa
 file_name = 'symbols'
 folder = 'data'
 path_file = folder + '/' + file_name + '.csv'
+testing = False
 
 # time of the analysis
 start_date = date.date(2019, 1, 1)
@@ -30,7 +31,8 @@ df_syms = df_syms[['name', 'symbol', 'country', 'industries']]
 stock_options = df_syms['symbol'].unique().tolist()
 
 # small list for testing
-stock_options = stock_options[0:10]
+if testing:
+    stock_options = stock_options[0:10]
 
 # Download static dataframe from yf
 df = yf.download(stock_options, start=start_date, end=end_date, progress=True)
