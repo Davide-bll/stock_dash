@@ -1,2 +1,5 @@
 /venv/
 /img_dec/
+*.pyc
+.DS_store
+.env
