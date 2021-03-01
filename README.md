@@ -29,7 +29,7 @@ Tab 1: Data Visualization
 
 Dal pannelllo si possono scegliere uno o piu indici da visualizzare.
 
-![Alt text](img_readme/tab1.png?raw=true)
+![Alt text](img_readme/tab1.jpg?raw=true)
 
 Tab 2: Time series analysis
 ======
@@ -44,7 +44,7 @@ y(t) = trend(t) + seasonality(t) + residual.
 ```
 Le tre componenti della serie vengono visualizzate.
 
-![Alt text](img_readme/tab2.png?raw=true)
+![Alt text](img_readme/tab2.jpg?raw=true)
 
 Tab 3: Forecast results
 ======
@@ -55,7 +55,7 @@ time.
 Il forecast è calcolato in modo reattivo, quando si seleziona un altro
 indice nel secondo TAB, l'immagine viene aggiornata, dopo che il forecast viene ricalcolato
 
-![Alt text](img_readme/tab3.png?raw=true)
+![Alt text](img_readme/tab3.jpg?raw=true)
 
 
 ### Moduli
