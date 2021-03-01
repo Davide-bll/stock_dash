@@ -60,16 +60,13 @@ indice nel secondo TAB, l'immagine viene aggiornata, dopo che il forecast viene 
 
 ### Moduli
 moduli utilizzati 
+```
 pandas 
-
 datetime 
-
 dash 
-
 yfinance 
-
 pytickersymbols
-
+```
 
 ### Moduli definiti: 
 
@@ -84,5 +81,5 @@ helpers\_functions: funzioni generiche
 1) Verifica di ipotesi della stazionarietà della serie. 
 2) Divisione train e test dei dati in modo da poter confrontare modelli di
 forecast diversi. (ets, tslm ecc.. ) e non solo autoarima. 
-3) l'utente non ha la possibilità di scegliere la lunghezza della serie. aggiongere
+3) l'utente non ha la possibilità di scegliere la lunghezza della serie. Aggiungere
 uno slider per mettere inizio e fine serie storica come input.
