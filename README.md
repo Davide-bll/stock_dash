@@ -1,6 +1,8 @@
 
-### DASHBOARD per FORECAST real time
+### DASHBOARD per STOCK prices FORECAST real time
+La dashboard visualizza e calcola il forecast dei prezzi stock.
 
+### Simboli degli stocks
 Per scaricare la lista di simboli, installare il modulo pytickersymbols
 e creare una cartella nella directory chiamata "data"
 
@@ -8,6 +10,8 @@ da terminale:
 ```
 python get\_symbols.py
 ```
+
+### Avvia la dashboard
 per avviare la dashboard, da terminale, digitare: 
 
 ```
@@ -25,6 +29,8 @@ Tab 1: Data Visualization
 
 Dal pannelllo si possono scegliere uno o piu indici da visualizzare.
 
+![Alt text](img_readme/tab1.png?raw=true)
+
 Tab 2: Time series analysis
 ======
 
@@ -38,6 +44,8 @@ y(t) = trend(t) + seasonality(t) + residual.
 ```
 Le tre componenti della serie vengono visualizzate.
 
+![Alt text](img_readme/tab2.png?raw=true)
+
 Tab 3: Forecast results
 ======
 
@@ -45,16 +53,32 @@ Forecast visualization Viene visualizzato il forecast calcolato Real
 time.
 
 Il forecast è calcolato in modo reattivo, quando si seleziona un altro
-indice nel secondo TAB,
+indice nel secondo TAB, l'immagine viene aggiornata, dopo che il forecast viene ricalcolato
 
-moduli utilizzati pandas datetime dash yfinance pytickersymbols
+![Alt text](img_readme/tab3.png?raw=true)
 
-moduli creati: help\_time\_series\_analysis: aiuta a gestire l'analisi
-di serie storiche dash\_layout: gestisce il layout della dashboard
+
+### Moduli
+moduli utilizzati 
+pandas 
+
+datetime 
+
+dash 
+
+yfinance 
+
+pytickersymbols
+
+
+### Moduli definiti: 
+
+help\_time\_series\_analysis: aiuta a gestire l'analisi
+di serie storiche.
+
+dash\_layout: gestisce il layout della dashboard
+
 helpers\_functions: funzioni generiche
-
-scripts: get\_symbols: script che permette di scaricare simboli degli
-stock e creare il file symbols.csv
 
 ### next TODOS 
 1) Verifica di ipotesi della stazionarietà della serie. 
