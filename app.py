@@ -12,7 +12,7 @@ import help_time_series_analysis as htsa
 file_name = 'symbols'
 folder = 'data'
 path_file = folder + '/' + file_name + '.csv'
-testing = False
+testing = True
 
 # time of the analysis
 start_date = date.date(2019, 1, 1)
@@ -32,7 +32,7 @@ stock_options = df_syms['symbol'].unique().tolist()
 
 # small list for testing
 if testing:
-    stock_options = stock_options[0:10]
+    stock_options = stock_options[0:5]
 
 # Download static dataframe from yf
 df = yf.download(stock_options, start=start_date, end=end_date, progress=True)
@@ -81,9 +81,10 @@ def update_graph(selected_dropdown_value):
 
 #### TAB2
 
-@app.callback(Output('intermediate-value_dec', 'children'),
-              Input('stockselector_fcst', 'value'))
-def create_decomposed(input_value):
+@app.callback(Output(component_id='intermediate-value_dec', component_property='children'),
+              [Input('button', 'n_clicks'),
+               State(component_id='stockselector_fcst', component_property='value')])
+def create_decomposed(n_clicks, input_value):
     """ update decomposed series dataframe """
     # decompose series using additive model
     df_dec = htsa.deco_series(df[input_value])
@@ -146,8 +147,9 @@ def update_residual(json_data):
 
 ##### TAB 3
 @app.callback(Output('intermediate-value', 'children'),
-              Input('stockselector_fcst', 'value'))
-def create_forecast(input_value):
+              [Input('button', 'n_clicks'),
+               State(component_id='stockselector_fcst', component_property='value')])
+def create_forecast(n_clicks, input_value):
     """ update forecast dataframe"""
     list_df = []
 

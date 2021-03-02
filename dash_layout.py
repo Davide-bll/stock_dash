@@ -83,6 +83,7 @@ def app_layout(app, options, init_val):
                              style={'color': '#1E1E1E'}
 
                              ),
+                    html.Button('Decompose series and compute ARIMA Forecast', id='button'),
                     html.Div(
                         id='intermediate-value_dec', style={'display': 'none'}
                     ),
