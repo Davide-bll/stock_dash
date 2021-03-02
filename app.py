@@ -60,6 +60,7 @@ app.config.suppress_callback_exceptions = True
 # create layout of the app
 dashf.app_layout(app, stock_options, initial_value)
 
+#### CALLBACKS decorator that use GLOBAL variables df
 #### TAB 1
 # Callback for past timeseries price visualization
 @app.callback(Output('timeseries', 'figure'),
@@ -108,8 +109,7 @@ def create_forecast(n_clicks, input_value):
     return df_fcst.to_json(date_format='iso', orient='split')
 
 
-
-# attachetd outside defined callbacks
+# attachetd outside defined callbacks. They only use reactive values
 callback_manager.attach_to_app(app=app)
 
 if __name__ == '__main__':

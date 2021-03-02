@@ -1,85 +1,79 @@
 
-### DASHBOARD per STOCK prices FORECAST real time
-La dashboard visualizza e calcola il forecast dei prezzi stock.
+### DASHBOARD  STOCK prices FORECAST real time
+Visualize daily stock prices and forecast them real time.
 
-### Simboli degli stocks
-Per scaricare la lista di simboli, installare il modulo pytickersymbols
-e creare una cartella nella directory chiamata "data"
+### Stock Symbols
+To download a stock symbols list, make sure you have 'pytickersymbols' module installed, 
+and you have a folder named 'data' in your directory
 
-da terminale:
+digit from the terminal:
 ```
 python get\_symbols.py
 ```
 
-### Avvia la dashboard
-per avviare la dashboard, da terminale, digitare: 
+### Run the Dashboard
+To run the dashboard, digit from the terminal: 
 
 ```
 python app.py
 ```
 
-## Estrazione Dati
-
-I dati vengono estratti usando l'API di yahoo finance. La serie storica
-parte dal 2019/01/01. Vengono considerati circa 100 indici Nasdaq.
+## Data download
+Data are extracted using yahoof API. The series starts from 2019-01-01. 
+About 100 NASDAQ symbols are considered.
 
 Tab 1: Data Visualization
 ======
 
-
-Dal pannelllo si possono scegliere uno o piu indici da visualizzare.
+From the panel you can select the stock prices you want to visualize
 
 ![Alt text](img_readme/tab1.jpg?raw=true)
 
-Tab 2: Time series analysis
+Tab 2: Time Series Analysis
 ======
 
-
-Dal pannelllo viene selezionato un singolo stock, di cui viene calcolato
-automaticamente il forecast usando la funzione autoArima, che sceglie il
-modello ARIMA piu appropriato. La serie viene decomposta usando il
-modello additivo: 
+Select a single stock from the panel, and push the button to start the tsa. The series is decomposed using the additive
+model:
 ```
 y(t) = trend(t) + seasonality(t) + residual.
 ```
-Le tre componenti della serie vengono visualizzate.
+This is an example of the trend component of AAPL
 
 ![Alt text](img_readme/tab2.jpg?raw=true)
 
 Tab 3: Forecast results
 ======
 
-Forecast visualization Viene visualizzato il forecast calcolato Real
-time.
-
-Il forecast è calcolato in modo reattivo, quando si seleziona un altro
-indice nel secondo TAB, l'immagine viene aggiornata, dopo che il forecast viene ricalcolato
+The autoARIMA forecast is plotted.
+The forecast computation is reactive, so if you change the stock selected at TAB2, you should wait some seconds
+for seeing the updated forecast
 
 ![Alt text](img_readme/tab3.jpg?raw=true)
 
 
-### Moduli
-moduli utilizzati 
+### Modules
+ 
 ```
 pandas 
 datetime 
 dash 
 yfinance 
 pytickersymbols
+typing
+dataclasses
 ```
 
-### Moduli definiti: 
+### Defined Modules: 
 
-help\_time\_series\_analysis: aiuta a gestire l'analisi
-di serie storiche.
+help\_time\_series\_analysis: deal time series analysys.
 
-dash\_layout: gestisce il layout della dashboard
+dash\_layout: gestisce deal with the dashboard layout
 
-helpers\_functions: funzioni generiche
+helpers\_functions: generic functions
+
+callbacks_manager: define callbacks decorators outside the app.py file
 
 ### next TODOS 
-1) Verifica di ipotesi della stazionarietà della serie. 
-2) Divisione train e test dei dati in modo da poter confrontare modelli di
-forecast diversi. (ets, tslm ecc.. ) e non solo autoarima. 
-3) l'utente non ha la possibilità di scegliere la lunghezza della serie. Aggiungere
-uno slider per mettere inizio e fine serie storica come input.
+1) check stationarity of the series. 
+2) train/test so that other models can be selected and compared 
+3) customize length of the series
