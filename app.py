@@ -55,7 +55,7 @@ xreg = df['dow']
 
 # Initialize the app
 app = dash.Dash(__name__)
-app.config.suppress_callback_exceptions = True
+server = app.server
 
 # create layout of the app
 dashf.app_layout(app, stock_options, initial_value)
