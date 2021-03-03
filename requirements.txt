@@ -26,7 +26,6 @@ lxml==4.6.2
 MarkupSafe==1.1.1
 matplotlib==3.3.4
 multitasking==0.0.9
-pandas==1.2.2
 pandas-datareader==0.9.0
 patsy==0.5.1
 Pillow==8.1.0
