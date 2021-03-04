@@ -1,5 +1,5 @@
 
-### DASHBOARD  STOCK prices FORECAST real time
+# DASHBOARD  STOCK prices FORECAST real time
 Visualize daily stock prices and forecast them real time.
 
 ### Demo
