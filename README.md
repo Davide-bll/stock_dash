@@ -57,7 +57,7 @@ The forecast computation is reactive, so it may require some time for autoARIMA 
 ![Alt text](img_readme/tab3.jpg?raw=true)
 
 
-### Modules
+### Main Modules
  
 ```
 pandas 
@@ -65,8 +65,7 @@ datetime
 dash 
 yfinance 
 pytickersymbols
-typing
-dataclasses
+plotly
 ```
 
 ### Defined Modules: 
