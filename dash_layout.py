@@ -12,6 +12,9 @@ df_syms = read_csv('data/symbols.csv')
 # Clean Data: Keep only main columns
 df_syms = df_syms[['name', 'symbol', 'country', 'industries']]
 
+# demo cols considered: AAPL CSCO INTC MSFT (this is really bad)
+demo_cols = ['AAPL', 'CSCO', 'INTC', 'MSFT']
+df_syms =  df_syms[df_syms.symbol.isin(demo_cols)]
 
 # create layout of the app
 def app_layout(app, options, init_val):
