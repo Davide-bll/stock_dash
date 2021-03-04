@@ -52,8 +52,7 @@ Tab 3: Forecast results
 ======
 
 The autoARIMA forecast is plotted.
-The forecast computation is reactive, so if you change the stock selected at TAB2, you should wait some seconds
-for seeing the updated forecast
+The forecast computation is reactive, so it may require some time for autoARIMA to find the optimal predictor.
 
 ![Alt text](img_readme/tab3.jpg?raw=true)
 
