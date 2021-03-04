@@ -49,6 +49,9 @@ def deco_series(x, period=20, model='additive'):
     :param model: how to decompose series. additive by default
     :return: decomposed series
     """
+    # check for missing values
+    x = x.dropna(axis='index', how='any')
+
     obj_dec = seasonal_decompose(x, model=model, period=period)
     list_df = [obj_dec.seasonal, obj_dec.trend, obj_dec.resid]
     df_dec = reduce(lambda x, y: pd.merge(x, y, on=['Date']), list_df)
@@ -111,6 +114,17 @@ def auto_ARIMAX(x, n, xreg, future_xreg, m=20):
 
 def forecast_stock(x, n, xreg=None):
     """ n period Forecast of series x using autoarima\n Xreg is expected to be a pandas Series """
+    # drop rows with NA
+    x = x.dropna(axis='index', how='any')
+
+    # modify xreg is x has some NA
+    if not xreg is None:
+        if xreg.size != x.size:
+            df_x = pd.DataFrame(x)
+            df_xreg = pd.DataFrame(data=xreg)
+            df_xreg = df_x.merge(df_xreg, 'left', on='Date')
+            xreg = df_xreg[xreg.name]
+
     # best ARIMA/ARIMAX fit and prediction prediction
     res = auto_ARIMA(x, n) if xreg is None else auto_ARIMAX(x, n, xreg, future_xreg=extend_wod(xreg, n, exclude_wod=[5, 6]))
 
