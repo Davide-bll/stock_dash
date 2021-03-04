@@ -2,6 +2,13 @@
 ### DASHBOARD  STOCK prices FORECAST real time
 Visualize daily stock prices and forecast them real time.
 
+### Demo
+You can find a demo of the App, in the following [link](https://demo-forecast-prices.herokuapp.com/)
+
+
+In the Demo, the data are considered from 2019-01-01 to 2021-04-03, only a few stocks are considered,  and the forecast is calculated in a static 
+dataframe (before deploying the App).
+
 ### Stock Symbols
 To download a stock symbols list, make sure you have 'pytickersymbols' module installed, 
 and you have a folder named 'data' in your directory
