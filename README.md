@@ -72,13 +72,13 @@ dataclasses
 
 ### Defined Modules: 
 
-help\_time\_series\_analysis: deal time series analysys.
+help\_time\_series\_analysis: deals with time series analysys.
 
-dash\_layout: gestisce deal with the dashboard layout
+dash\_layout: deals with the dashboard layout
 
 helpers\_functions: generic functions
 
-callbacks_manager: define callbacks decorators outside the app.py file
+callbacks_manager: class to manage callback fnctions
 
 ### next TODOS 
 1) check stationarity of the series. 
